@@ -1,0 +1,1418 @@
+{
+	"info": {
+		"_postman_id": "8167002d-3379-42ff-80e7-08f61e8bc6b6",
+		"name": "MW-Dispatcher-QA-PurchaseOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5509655"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var json = JSON.parse(responseBody);\r",
+							"tests[\"Get Azure AD Token\"] = !json.error && responseBody !== '' && responseBody !== '{}' && json.access_token !== '';\r",
+							"postman.setEnvironmentVariable(\"bearerToken\", json.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"followAuthorizationHeader": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "{{grant_type}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "AudienceID",
+							"value": "{{AudienceID}}",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "resource",
+							"value": "{{client_id}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/:tenant_id/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						":tenant_id",
+						"oauth2",
+						"token"
+					],
+					"variable": [
+						{
+							"key": "tenant_id",
+							"value": "{{tenant_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAEnvAPIM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"PlaNNed\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAEnvAPIM_Jay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"PlaNNed\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"06092021999\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF000000000000000000114\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test7",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF009\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test8",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00000000000000040\",\r\n    \"Vendor\": \"0000090\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test9",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\":\"\" ,\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test10",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"000009000000000000000\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test11",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V00009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test12",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test13",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Received\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"ML08\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test14",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test15",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test16",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210619\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test17",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Received\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test18",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Received\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"112233445566\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test19",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test20",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-Item000000000000007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test21",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\":\"\", \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test22",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.55, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test23",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.55555, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test24",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": \"\",\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test25",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10.75,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test26",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\":\"\",\r\n            \"DOACount\":\"\" ,\r\n            \"GrowerCondem\":\"\",\r\n            \"PlantCondem\":\"\" ,\r\n            \"GrowerPortion\":\"\",\r\n            \"PlantPortion\":\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test27",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 25,\r\n            \"GrowerCondem\": 50.55,\r\n            \"PlantCondem\": 65.55,\r\n            \"GrowerPortion\": 0.0,\r\n            \"PlantPortion\": 0.0\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test28",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test29",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test30",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test31",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V000009\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test32",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V013206\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Planned\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"1\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiatePurchaseOrder-MLFMWQAAPIM_Test33",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\":{\r\n    \"SourceSystem\":\"MLFUniverse\",\r\n    \"RequestTime\":\"20210609\",\r\n    \"BusinessEntity\":\"PurchaseOrder\",\r\n    \"TargetSystem\":\"D365FO\",\r\n    \"ReceivedTime\":\"\",\r\n    \"ReferenceNo\":\"\"\r\n},\r\n\"RequestBody\":{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"Ponumber\": \"MLF00004\",\r\n    \"Vendor\": \"V013206\",\r\n    \"Lines\": [\r\n        {\r\n            \"LineType\": \"Received\",\r\n            \"DeliveryDate\": \"20210609\",\r\n            \"TrailerID\": \"null\",\r\n            \"ItemID\": \"Demo-007\",\r\n            \"FlockWeight\": 51.5, \r\n            \"CatchCount\": 10,\r\n            \"AverageWeight\": 3.01,\r\n            \"DOACount\": 0,\r\n            \"GrowerCondem\": 0,\r\n            \"PlantCondem\": 0,\r\n            \"GrowerPortion\": 0.525,\r\n            \"PlantPortion\": 0.555\r\n        }\r\n    ]\r\n}\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://mlfmwqaapim.azure-api.net/MLFMWQADispatcher/PurchaseOrder/InitiatePurchaseOrder",
+					"protocol": "https",
+					"host": [
+						"mlfmwqaapim",
+						"azure-api",
+						"net"
+					],
+					"path": [
+						"MLFMWQADispatcher",
+						"PurchaseOrder",
+						"InitiatePurchaseOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

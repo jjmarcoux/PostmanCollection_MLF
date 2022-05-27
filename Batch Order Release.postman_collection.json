@@ -1,0 +1,1190 @@
+{
+	"info": {
+		"_postman_id": "ad77f74d-3f06-42dd-a8c9-98f0ad385e92",
+		"name": "Batch Order Release",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5509655"
+	},
+	"item": [
+		{
+			"name": "Batch Order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"0001021234567890123456\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_4",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC test message here to check the length\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"18541234568909876543213456\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_7",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_8",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"002021052800\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_9",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": ,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_10",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1.678,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_11",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7789,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_12",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAMaaaartyuhjk\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_13",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDCAABBCCDDFFGG\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_14",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"AABBCCDDFFGGHH\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_15",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"AABBCCDDFFGGHH\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_16",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"AABBCCDDFFGGHH\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.92\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_17",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854123456789012345567890\",\r\n    \"yieldPercent\": 9.9\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Batch Order Test_18",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestHeader\": {\r\n    \"sourceSystem\": \"MLFD365FO\",\r\n    \"requestTime\": \"9/20/2021 6:15:45 PM\",\r\n    \"businessEntity\": \"BATCHORDER\",\r\n    \"targetSystem\": \"MLFUniverse\",\r\n    \"receivedTime\": \"9/20/2021 6:15:44 PM\",\r\n    \"referenceNo\": \"09202021-181544-4ee96268-7fd6-42da-93ff-c2cd305dbcac\"\r\n  },\r\n  \"requestBody\": {\r\n    \"company\": \"mlf\",\r\n    \"orderNumber\": \"000102\",\r\n    \"orderName\": \"44845 COS BNLS SKLS THIGH AC\",\r\n    \"itemID\": \"1854\",\r\n    \"deliveryDate\": \"20210528\",\r\n    \"scheduledCWQty\": 1,\r\n    \"scheduledQty\": 11.7,\r\n    \"prodSiteID\": \"BRAM\",\r\n    \"plannedReceiptWarehouseID\": \"NDC\",\r\n    \"plannedReceiptLocationID\": \"\",\r\n    \"prodGroupID\": \"\",\r\n    \"prodPoolID\": \"\",\r\n    \"formulaID\": \"BOM-1854\",\r\n    \"yieldPercent\": 9.929\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BatchOrderRelease/InitiateBatchOrderRelease",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BatchOrderRelease",
+						"InitiateBatchOrderRelease"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

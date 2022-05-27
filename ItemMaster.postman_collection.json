@@ -1,0 +1,1780 @@
+{
+	"info": {
+		"_postman_id": "c2f5f177-a6fe-405c-9541-69c7c7191ef0",
+		"name": "ItemMaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5509655"
+	},
+	"item": [
+		{
+			"name": "InitiateItemMaster",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0000.000,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_4",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"case service management\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"aaaaa bbbbb ccccc\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 10.50,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_7",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea xxxx vvvv bbbbb\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"0000000043800999787656556\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW, AAAA BBBB\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_8",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI XXXX DDDDD EEEEE\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_9",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"0000000043833556677887766\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_10",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW,aaaaa bbbbb wwww\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREw\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_11",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\":1+5,\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_12",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 10.567,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_13",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\":10.50,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_14",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\":10.568,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_15",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\":50.788,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_16",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\":10.50,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_17",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"23232323232323223232323232323\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_18",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"123456789012345678901223456\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_19",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": ok,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_20",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-productionIDEzzz eee rrr tttt yyy\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_21",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued XXXXYYYY WWWWWW AAAAAAAA EEEEEE AAAAAAA KKKKKKKK\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_22",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW XXXX01010 ,ABCAAAA\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_23",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"0000000043889231123456786756\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_24",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea xxx ioplki vvvbb  nnnh njnmk\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_25",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea weer uiyik oyuuuol rtyui\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_26",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 10.5667,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_27",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"assasasa vbvbvbv hjhjh\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_28",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"NoT\",\r\n        \"UTF14\": \"\"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InitiateItemMaster Test_29",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"RequestHeader\": {\r\n        \"SourceSystem\": \"MLFD365FO\",\r\n        \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n        \"BusinessEntity\": \"MASTERDATA\",\r\n        \"TargetSystem\": \"MLFUniverse\",\r\n        \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n        \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n      },\r\n      \"RequestBody\": {\r\n        \"Company\": \"mlf\",\r\n        \"ContainerInfo\": \"\",\r\n        \"CWUnitId\": \"\",\r\n        \"Department\": \"\",\r\n        \"EAN128UPC\": \"\",\r\n        \"Factor\": 0,\r\n        \"InventStopped\": 0,\r\n        \"InventUnitId\": \"ea\",\r\n        \"ItemGroupId\": \"PPI\",\r\n        \"ItemId\": \"00000000438\",\r\n        \"ItemName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ItemBatchNumGroup\": \"\",\r\n        \"NetWeight\": 0,\r\n        \"PdsBestBefore\": 0,\r\n        \"PdsCWMax\": 0,\r\n        \"PdsCWMin\": 0,\r\n        \"PdsShelfLife\": 0,\r\n        \"PrimalCutGroup\": \"\",\r\n        \"PrimaryVendorId\": \"\",\r\n        \"ProductionType\": {\r\n          \"EnumID\": 1,\r\n          \"Label\": \"Co-product\"\r\n        },\r\n        \"ProductLifecycleStateID\": \"Discontinued\",\r\n        \"ProductName\": \"HALVES, COUPLING, 8018 SF, 3\\\" BORE, STD.KEYWAY, 2 LOCK SCREW\",\r\n        \"ProductNum\": \"00000000438\",\r\n        \"PurchUnitId\": \"ea\",\r\n        \"SalesUnitId\": \"ea\",\r\n        \"TareWeight\": 0,\r\n        \"UPCA\": \"\",\r\n        \"UseForInput\": \"No\",\r\n        \"UTF14\": \"aaaa bbbb cccc ffffff \"\r\n      }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/itemmasters/initiateitemmaster",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"itemmasters",
+						"initiateitemmaster"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

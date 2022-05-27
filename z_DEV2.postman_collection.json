@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "61b767ba-9612-43e6-802c-d16fd10f598e",
+		"name": "z_DEV2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5509655"
+	},
+	"item": [
+		{
+			"name": "Get Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var json = JSON.parse(responseBody);\r",
+							"tests[\"Get Azure AD Token\"] = !json.error && responseBody !== '' && responseBody !== '{}' && json.access_token !== '';\r",
+							"postman.setEnvironmentVariable(\"bearerToken\", json.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"strictSSL": true,
+				"followAuthorizationHeader": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "{{grant_type}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "{{resource}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/:tenant_id/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						":tenant_id",
+						"oauth2",
+						"token"
+					],
+					"variable": [
+						{
+							"key": "tenant_id",
+							"value": "{{tenant_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProjectInfo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\tcompany:\"MLF\",\r\n\trecordId:\"5637145382\"\r\n}"
+				},
+				"url": {
+					"raw": "{{resource}}/api/services/ProjectServices/ProjectWbsService/getProjectInfo",
+					"host": [
+						"{{resource}}"
+					],
+					"path": [
+						"api",
+						"services",
+						"ProjectServices",
+						"ProjectWbsService",
+						"getProjectInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DimensionService",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{resource}}/api/services/FinancialDimensionServices/DimensionService/getDimensionsAll",
+					"host": [
+						"{{resource}}"
+					],
+					"path": [
+						"api",
+						"services",
+						"FinancialDimensionServices",
+						"DimensionService",
+						"getDimensionsAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessPurchaseOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Company\": \"MLF\",\r\n    \"DeliveryDate\": \"20210609\",\r\n    \"PONumber\": \"MLF00015\",\r\n    \"Vendor\": \"000090\",\r\n    \"Lines\": [\r\n    {\r\n        \"LineType\": \"Planned\",\r\n        \"DeliveryDate\": \"20210609\",\r\n        \"TrailerId\": \"\",\r\n        \"ItemId\": \"Demo-007\",\r\n        \"FlockWeight\": 51.5,\r\n        \"CatchCount\": 10,\r\n        \"AverageWeight\": 3.01,\r\n        \"DoaCount\": 0,\r\n        \"GrowerCondemn\": null,\r\n        \"PlantCondemn\": null,\r\n        \"GrowerPortion\": 0.0,\r\n        \"PlantPortion\": 0.0\r\n    }\r\n    ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{resource}}/api/services/MLFServices/PurchaseService/processOrder",
+					"host": [
+						"{{resource}}"
+					],
+					"path": [
+						"api",
+						"services",
+						"MLFServices",
+						"PurchaseService",
+						"processOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

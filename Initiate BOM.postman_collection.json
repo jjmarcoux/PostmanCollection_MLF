@@ -1,0 +1,1485 @@
+{
+	"info": {
+		"_postman_id": "111b2a30-7e42-4402-9352-da74336251bc",
+		"name": "Initiate BOM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5509655"
+	},
+	"item": [
+		{
+			"name": "BOM Formula",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"1000\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"1000\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"1000\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_1",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"UnitId\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"UnitId\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroupId\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"Yes\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"UnitId\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\":\"\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_3",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_4",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-08400000000000000000\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_5",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\":\"\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_6",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAMAABBCCDDEEFFGG\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_7",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_8",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"OK\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_9",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\":\"\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\":\"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_10",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"1001\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_11",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\":\"\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_12",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"08408877887799554422778855\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_13",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_14",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132AABBCCDDDEERRTTRREEWW\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_15",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"Yes\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\":,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_16",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18.879,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24.555,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_17",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\":\"\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_18",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kgddffggerty\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_19",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\":\"\" ,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_20",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18.789,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_21",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_22",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"5\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_23",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1.5\",\r\n        \"Denominator\": 18.789,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BOM Formula Test_24",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "K1TkuQffUR3q",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "d365apidev",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{bearerToken}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestHeader\": {\r\n    \"SourceSystem\": \"MLFD365FO\",\r\n    \"RequestTime\": \"8/4/2021 3:37:28 PM\",\r\n    \"BusinessEntity\": \"BOM\",\r\n    \"TargetSystem\": \"MLFUniverse\",\r\n    \"ReceivedTime\": \"8/4/2021 3:37:27 PM\",\r\n    \"ReferenceNo\": \"08042021-153727-b4a566e9-473c-4898-8f69-d51d2668b16f\"\r\n  },\r\n  \"RequestBody\": {\r\n    \"BOMYields\": [],\r\n    \"Company\": \"mlf\",\r\n    \"CoProducts\": [\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W_BACK FRONT\",\r\n        \"Qty\": 2,\r\n        \"Unit\": \"kg\"\r\n      },\r\n      {\r\n        \"Denominator\": 18,\r\n        \"InventStopped\": 0,\r\n        \"ItemId\": \"W3064\",\r\n        \"Qty\": 4,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"FormulaId\": \"BOM-0840\",\r\n    \"Formulation\": [],\r\n    \"IsActive\": \"Yes\",\r\n    \"ItemGroup\": \"100\",\r\n    \"Lines\": [\r\n      {\r\n        \"Calc\": \"1\",\r\n        \"Denominator\": 18,\r\n        \"InventStopped\":10.50,\r\n        \"ItemId\": \"W2132\",\r\n        \"Qty\": 24,\r\n        \"Unit\": \"kg\"\r\n      }\r\n    ],\r\n    \"ProdItemId\": \"0840\",\r\n    \"SiteId\": \"BRAM\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://devmwmlfapi.maplelodgefarms.com/api/BOM/InitiateBOM",
+					"protocol": "https",
+					"host": [
+						"devmwmlfapi",
+						"maplelodgefarms",
+						"com"
+					],
+					"path": [
+						"api",
+						"BOM",
+						"InitiateBOM"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
